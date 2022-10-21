@@ -1,4 +1,5 @@
 PROCESS NAME | MODULE_LABEL | PRODUCT INSTANCE NAME | DATA PRODUCT TYPE
+-- | -- | -- | --
 Swizzler | pmtreadout | FlasherLogicPulse | std::vector<raw::OpDetWaveform>
 Swizzler | ophit |  | std::vector<recob::OpHit>
 Swizzler | beamdata |  | raw::BeamInfo
