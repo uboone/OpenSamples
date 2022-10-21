@@ -10,8 +10,8 @@ Recipe:
 ```
 git clone https://github.com/uboone/OpenSamples.git
 cd OpenSamples/
-conda create -n opendata-test python=3.7
-conda activate opendata-test
+conda create -n ubopendata python=3.7
+conda activate ubopendata
 conda install scipy
 conda install jupyter
 conda install matplotlib
