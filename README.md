@@ -42,4 +42,4 @@ The `microboone_utils.py` file contains useful tools to access detector informat
 
 ## Structure and content of input files
 
-The structure and content of the hdf5 input files can be found at this wiki page: [Structure and content of input files](https://github.com/cerati/ubopendata/wiki/Structure-and-content-of-input-files), where each element in the file is documented in terms of its name, type, size, and a human readable description.
+The structure and content of the hdf5 input files can be found at this wiki page: [Structure and content of input files](file-content-hdf5.md), where each element in the file is documented in terms of its name, type, size, and a human readable description.
