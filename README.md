@@ -65,12 +65,16 @@ The structure and content of the hdf5 input files can be found at this wiki page
 
 ## artroot format
 
-These samples are extracted from “artroot” files typically used by the experiment. The corresponding artroot files are stored on Fermilab disk spaces and have also been given open access, through [xrootd](https://xrootd.slac.stanford.edu/). Lists of xrootd urls providing access to the two samples can be found at these links: [inclusive neutrino interactions](public-artroot-bnb.list) and [charged-current electron neutrino interaction](public-artroot-nue.list). Usage of these files is recommended only for users that are familiar with the software stack used by Fermilab neutrino experiments, which includes [art](https://art.fnal.gov/), [LArSoft](https://larsoft.github.io/), [root](https://root.cern.ch/), and uboonecode. 
+These samples are extracted from “artroot” files typically used by the experiment. The corresponding artroot files are stored on Fermilab disk spaces and have also been given open access, through [xrootd](https://xrootd.slac.stanford.edu/). Usage of these files is recommended only for users that are familiar with the software stack used by Fermilab neutrino experiments, which includes [art](https://art.fnal.gov/), [LArSoft](https://larsoft.github.io/), [root](https://root.cern.ch/), and uboonecode. 
+
+Lists of xrootd urls providing access to the two samples can be found at these links: [inclusive neutrino interactions](public-artroot-bnb.list) and [charged-current electron neutrino interaction](public-artroot-nue.list).
 
 Sample | N events | N files | size
 -- | -- | -- | --
 Inclusive | 141,260 | 3400 | 787 GB
 Electron neutrino | 89,339 | 2151 | 761 GB
+
+We also provide the lists of xrootd urls corresponding to the files used for producing the "WithWire" HDF5 datasets: [inclusive neutrino interactions](public-artroot-bnb-withwire.list) and [charged-current electron neutrino interaction](public-artroot-nue-withwire.list). These are a subset of the full file lists reported above, which are used to produce the "NoWire" HDF5 samples.
 
 The content of the open artroot files has been documented in [this document](file-content-artroot.md), where the data product classes are documented in the [LArSoft doxygen pages](https://nusoft.fnal.gov/larsoft/doxsvn/html/).
 
