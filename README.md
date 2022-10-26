@@ -6,7 +6,14 @@ Samples are provided in two different formats: HDF5, targeting the broadest audi
 
 ## HDF5 format
 
-HDF5 files for the two open samples of simulated BNB neutrino interactions (inclusive and charged-current electron neutrino) are stored on the open data portal [Zenodo](https://zenodo.org/). Each sample is provided in two versions: with and without wire information. The reason is that, when present, the wire information largely dominated the file size. A second set of datasets is therefore created without the wire information, thus allowing storage of a significantly larger number of *events* for applications that do not use the wire information. 
+HDF5 files for the two open samples of simulated BNB neutrino interactions (inclusive and charged-current electron neutrino) are stored on the open data portal [Zenodo](https://zenodo.org/). Each sample is provided in two versions: with and without wire information. The reason is that, when present, the wire information largely dominated the file size. A second set of datasets is therefore created without the wire information, thus allowing storage of a significantly larger number of *events* for applications that do not use the wire information (where events are defined as independent detector read outs). 
+
+Sample | N events | N files | size
+-- | -- | -- | --
+Inclusive, NoWire | 141,112 | 20 | 34 GB
+Inclusive, WithWire | 24,332 | 18 | 44 GB
+Electron neutrino, NoWire | 89,339 | 20 | 31 GB
+Electron neutrino, WithWire | 19,940 | 20 | 40 GB
 
 This section provides documentation on how to access the information included in the HDF5 files. Examples demonstrating how to use the data is provided in the form of jupyter notebooks. The ful description of the file content is also provided.
 
@@ -59,6 +66,11 @@ The structure and content of the hdf5 input files can be found at this wiki page
 ## artroot format
 
 These samples are extracted from “artroot” files typically used by the experiment. The corresponding artroot files are stored on Fermilab disk spaces and have also been given open access, through [xrootd](https://xrootd.slac.stanford.edu/). Lists of xrootd urls providing access to the two samples can be found at these links: [inclusive neutrino interactions](public-artroot-bnb.list) and [charged-current electron neutrino interaction](public-artroot-nue.list). Usage of these files is recommended only for users that are familiar with the software stack used by Fermilab neutrino experiments, which includes [art](https://art.fnal.gov/), [LArSoft](https://larsoft.github.io/), [root](https://root.cern.ch/), and uboonecode. 
+
+Sample | N events | N files | size
+-- | -- | -- | --
+Inclusive | 141,112 | 3400 | 787 GB
+Electron neutrino | 89,339 | 2151 | 761 GB
 
 The content of the open artroot files has been documented in [this document](file-content-artroot.md), where the data product classes are documented in the [LArSoft doxygen pages](https://nusoft.fnal.gov/larsoft/doxsvn/html/).
 
