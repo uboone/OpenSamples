@@ -1,7 +1,18 @@
 # MicroBooNE open samples
 
+Two MicroBooNE datasets are opened to the public. They contain simulated neutrino interactions, overlaid on top of cosmic ray data. Both simulate neutrinos in the Booster Neutrino Beam. The first sample includes all types of neutrinos and interactions (taking place in the whole cryostat volume), with relative abundance matching our nominal flux and cross section models. The second sample is restricted to charged-current electron neutrino interactions within the argon active volume of the time projection chamber. 
 
-## Local Setup
+Samples are provided in two different formats: HDF5, targeting the broadest audience, and artroot, targeting users that are familiar with the software infrastructure of Fermilab neutrino experiments and more in general of HEP experiments.
+
+## HDF5 format
+
+This section provides documentation on how to access the information included in the HDF5 files. Examples demonstrating how to use the data is provided in the form of jupyter notebooks. The ful description of the file content is also provided.
+
+Here we point to more information on the HDF5 file format and how to read them. HDF5 is a product of the [HDF5 group](https://docs.hdfgroup.org/archive/support/HDF5/doc/index.html). In the notebookes we open the files using the `File` class from [pynuml](https://libraries.io/pypi/pynuml), which internally relies on [h5py](https://docs.h5py.org/en/stable/index.html). We also use [p5concat](https://github.com/NU-CUCIS/ph5concat) to merge files and to add auxiliary data for faster lookup of related information across different tables.
+
+### Jupyter notebooks
+
+#### Local Setup
 
 These set of notebooks can be run from a conda environment (or similar setup) that includes the following packages and their dependents: python=3.7, scipy, jupyter, matplotlib, h5py, plotly, pandas, particle, scikit-image.
 Plus the pynuml package for helper functions used to easily access information in the files.
@@ -23,7 +34,7 @@ conda install -c conda-forge "h5py>=2.9=mpi*"
 pip install pynuml==0.1
 ```
 
-## Overview of the notebooks
+#### Overview of the notebooks
 
 Each notebook can be independently executed and serves a specific purpose.
 
@@ -39,7 +50,39 @@ The `Optical Information.ipynb` notebook focuses on the usage of optical detecto
 
 The `microboone_utils.py` file contains useful tools to access detector information, or other information relative to our physics data. Instead, `plot_utils.py` collects a few utilities used for producing plots, and are independent from our data.
 
-
-## Structure and content of input files
+### Structure and content of input files
 
 The structure and content of the hdf5 input files can be found at this wiki page: [Structure and content of input files](file-content-hdf5.md), where each element in the file is documented in terms of its name, type, size, and a human readable description.
+
+## artroot format
+
+These samples are extracted from “artroot” files typically used by the experiment. The corresponding artroot files are stored on Fermilab disk spaces and have also been given open access, through [xrootd](https://xrootd.slac.stanford.edu/). Lists of xrootd urls providing access to the two samples can be found at these links: [inclusive neutrino interactions](public-artroot-bnb.list) and [charged-current electron neutrino interaction](public-artroot-nue.list). Usage of these files is recommended only for users that are familiar with the software stack used by Fermilab neutrino experiments, which includes [art](https://art.fnal.gov/), [LArSoft](https://larsoft.github.io/), [root](https://root.cern.ch/), and uboonecode. 
+
+The content of the open artroot files has been documented in [this document](file-content-artroot.md), where the data product classes are documented in the [LArSoft doxygen pages](https://nusoft.fnal.gov/larsoft/doxsvn/html/).
+
+As an example of accessing the artroot files, we point to the [code](https://github.com/cerati/numl/blob/ub-mcc9/numl/NeutrinoML/HDF5Maker_module.cc) used to create the HDF5 samples, and the configuration files used to produce the version [with](https://github.com/cerati/numl/blob/ub-mcc9/numl/NeutrinoML/hdf5maker_uB_public_job.fcl) and [without](https://github.com/cerati/numl/blob/ub-mcc9/numl/NeutrinoML/hdf5maker_uB_public-nowire_job.fcl) wire information.
+
+The uboonecode release used to analyze these data sets is `v08_00_00_54`, which can be installed from binaries using [these instructions](https://scisoft.fnal.gov/scisoft/bundles/uboone/v08_00_00_54/uboone-v08_00_00_54.html) or can be accessed from the MicroBooNE area on [CVMFS](https://cernvm.cern.ch/fs/): `/cvmfs/uboone.opensciencegrid.org/products/`. When using CVMFS, a recipe for running the code mentioned above is the following: 
+```
+mkdir ubtest
+cd ubtest/
+source /cvmfs/uboone.opensciencegrid.org/products/setup_uboone_mcc9.sh
+setup uboonecode v08_00_00_54 -q e17:prof
+mrb newDev
+source localProducts_larsoft_v08_05_00_17_e17_prof/setup
+cd srcs
+git clone -b ub-mcc9 --single-branch https://github.com/cerati/numl.git
+mrb updateDepsCM
+mrbsetenv
+mrb i -j 4
+lar -c numl/numl/NeutrinoML/hdf5maker_uB_public-nowire_job.fcl -n -1 -s xroot://fndca1.fnal.gov:1095//pnfs/fnal.gov/usr/uboone/persistent/PublicAccess/prodgenie_bnb_intrinsice_nue_uboone_overlay_mcc9.1_v08_00_00_26_run1_reco2_reco2/PhysicsRun-2016_8_6_0_4_30-0007079-00075_20160806T122353_ext_unbiased_20160807T044016_merged_gen_20190427T170343_eventweight_20190427T170513_g4_detsim_81f1fe09-e7f1-45fc-9fef-9e71e41e08ac.root
+```
+
+## License and citation
+
+Samples are released under [CC-by license](https://creativecommons.org/licenses/by/4.0/), allowing users to freely reuse the data with the requirement of giving appropriate credit to the collaboration for providing the datasets.
+
+Suggested text for acknowledgment is the following:<br>
+*We acknowledge the MicroBooNE Collaboration for making publicly available the data sets [data set DOI] employed in this work. These data sets consist of simulated neutrino interactions from the Booster Neutrino Beamline overlaid on top of cosmic data collected with the MicroBooNE detector [2017 JINST 12 P02017].*
+
+In addition, although not enforced by the license, we request that software products resulting from the usage of the datasets are also made publicly available.
