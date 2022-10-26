@@ -10,7 +10,7 @@ HDF5 files for the two open samples of simulated BNB neutrino interactions (incl
 
 Sample | N events | N files | size
 -- | -- | -- | --
-Inclusive, NoWire | 141,112 | 20 | 34 GB
+Inclusive, NoWire | 141,260 | 20 | 34 GB
 Inclusive, WithWire | 24,332 | 18 | 44 GB
 Electron neutrino, NoWire | 89,339 | 20 | 31 GB
 Electron neutrino, WithWire | 19,940 | 20 | 40 GB
@@ -69,7 +69,7 @@ These samples are extracted from “artroot” files typically used by the exper
 
 Sample | N events | N files | size
 -- | -- | -- | --
-Inclusive | 141,112 | 3400 | 787 GB
+Inclusive | 141,260 | 3400 | 787 GB
 Electron neutrino | 89,339 | 2151 | 761 GB
 
 The content of the open artroot files has been documented in [this document](file-content-artroot.md), where the data product classes are documented in the [LArSoft doxygen pages](https://nusoft.fnal.gov/larsoft/doxsvn/html/).
