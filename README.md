@@ -89,11 +89,11 @@ setup uboonecode v08_00_00_54 -q e17:prof
 mrb newDev
 source localProducts_larsoft_v08_05_00_17_e17_prof/setup
 cd srcs
-git clone -b opensamples --single-branch git@github.com:uboone/hdf5maker.git
+git clone -b opensamples https://github.com/uboone/hdf5maker.git
 mrb updateDepsCM
 mrbsetenv
-mrb i -j 4
-lar -c numl/numl/NeutrinoML/hdf5maker_uB_public-nowire_job.fcl -n -1 -s xroot://fndca1.fnal.gov:1095//pnfs/fnal.gov/usr/uboone/persistent/PublicAccess/prodgenie_bnb_intrinsice_nue_uboone_overlay_mcc9.1_v08_00_00_26_run1_reco2_reco2/PhysicsRun-2016_8_6_0_4_30-0007079-00075_20160806T122353_ext_unbiased_20160807T044016_merged_gen_20190427T170343_eventweight_20190427T170513_g4_detsim_81f1fe09-e7f1-45fc-9fef-9e71e41e08ac.root
+mrb i
+lar -c hdf5maker/hdf5maker/HDF5Maker/hdf5maker_uB_public-nowire_job.fcl -n -1 -s xroot://fndca1.fnal.gov:1095//pnfs/fnal.gov/usr/uboone/persistent/PublicAccess/prodgenie_bnb_intrinsice_nue_uboone_overlay_mcc9.1_v08_00_00_26_run1_reco2_reco2/PhysicsRun-2016_8_6_0_4_30-0007079-00075_20160806T122353_ext_unbiased_20160807T044016_merged_gen_20190427T170343_eventweight_20190427T170513_g4_detsim_81f1fe09-e7f1-45fc-9fef-9e71e41e08ac.root
 ```
 
 ## License and citation
