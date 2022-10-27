@@ -89,7 +89,7 @@ setup uboonecode v08_00_00_54 -q e17:prof
 mrb newDev
 source localProducts_larsoft_v08_05_00_17_e17_prof/setup
 cd srcs
-git clone -b ub-mcc9 --single-branch https://github.com/cerati/numl.git
+git clone -b opensamples --single-branch git@github.com:uboone/hdf5maker.git
 mrb updateDepsCM
 mrbsetenv
 mrb i -j 4
