@@ -28,7 +28,7 @@ Plus the pynuml package for helper functions used to easily access information i
 
 Recipe:
 ```
-git clone https://github.com/uboone/OpenSamples.git
+git clone -b v00 https://github.com/uboone/OpenSamples.git
 cd OpenSamples/
 conda create -n ubopendata python=3.7
 conda activate ubopendata
@@ -94,6 +94,10 @@ mrb updateDepsCM
 mrbsetenv
 mrb i
 lar -c hdf5maker/hdf5maker/HDF5Maker/hdf5maker_uB_public-nowire_job.fcl -n -1 -s xroot://fndca1.fnal.gov:1095//pnfs/fnal.gov/usr/uboone/persistent/PublicAccess/prodgenie_bnb_intrinsice_nue_uboone_overlay_mcc9.1_v08_00_00_26_run1_reco2_reco2/PhysicsRun-2016_8_6_0_4_30-0007079-00075_20160806T122353_ext_unbiased_20160807T044016_merged_gen_20190427T170343_eventweight_20190427T170513_g4_detsim_81f1fe09-e7f1-45fc-9fef-9e71e41e08ac.root
+```
+In order to run over multiple input files, the `-S` option can be used, e.g.:
+```
+lar -c hdf5maker/hdf5maker/HDF5Maker/hdf5maker_uB_public-nowire_job.fcl -n 100 -S public-artroot-nue.list
 ```
 
 ## License and citation
