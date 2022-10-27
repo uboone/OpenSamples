@@ -98,7 +98,7 @@ lar -c numl/numl/NeutrinoML/hdf5maker_uB_public-nowire_job.fcl -n -1 -s xroot://
 
 ## License and citation
 
-Samples are released under [CC-by license](https://creativecommons.org/licenses/by/4.0/), allowing users to freely reuse the data with the requirement of giving appropriate credit to the collaboration for providing the datasets.
+Samples are released under a [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/deed.en_US) license. This license allows users to freely reuse the data with the requirement of giving appropriate credit to the collaboration for providing the datasets.
 
 Suggested text for acknowledgment is the following:<br>
 *We acknowledge the MicroBooNE Collaboration for making publicly available the data sets [data set DOI] employed in this work. These data sets consist of simulated neutrino interactions from the Booster Neutrino Beamline overlaid on top of cosmic data collected with the MicroBooNE detector [2017 JINST 12 P02017].*
