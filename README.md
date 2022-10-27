@@ -104,3 +104,7 @@ Suggested text for acknowledgment is the following:<br>
 *We acknowledge the MicroBooNE Collaboration for making publicly available the data sets [data set DOI] employed in this work. These data sets consist of simulated neutrino interactions from the Booster Neutrino Beamline overlaid on top of cosmic data collected with the MicroBooNE detector [2017 JINST 12 P02017].*
 
 In addition, although not enforced by the license, we request that software products resulting from the usage of the datasets are also made publicly available.
+
+## Contact
+
+In case of questions, please contact microboone_info@fnal.gov.
