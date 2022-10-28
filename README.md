@@ -2,28 +2,27 @@
 
 Two MicroBooNE datasets are opened to the public. They contain simulated neutrino interactions, overlaid on top of cosmic ray data. Both simulate neutrinos in the Booster Neutrino Beam (BNB). The first sample includes all types of neutrinos and interactions (taking place in the whole cryostat volume), with relative abundance matching our nominal flux and cross section models. The second sample is restricted to charged-current electron neutrino interactions within the argon active volume of the time projection chamber. 
 
-Samples are provided in two different formats: HDF5, targeting the broadest audience, and artroot, targeting users that are familiar with the software infrastructure of Fermilab neutrino experiments and more in general of HEP experiments. Both the HDF5 files and a list of xrootd urls providing access to the artoot files are stored on the open data portal [Zenodo](https://zenodo.org/), and can be accessed from the DOI links in the table below. Artroot files contain the full information available to members of the collaboration, while HDF5 files have a reduced and simplified content. Each HDF5 sample is provided in two versions: with and without wire information. The reason is that, when present, the wire information largely dominated the file size. A second set of datasets is therefore created without the wire information, thus allowing storage of a significantly larger number of *events* for applications that do not use the wire information (where events are defined as independent detector read outs). 
+Samples are provided in two different formats: HDF5, targeting the broadest audience, and artroot, targeting users that are familiar with the software infrastructure of Fermilab neutrino experiments and more in general of HEP experiments. The HDF5 files and a file with the list of xrootd urls providing access to the artoot files are stored on the open data portal [Zenodo](https://zenodo.org/), and can be accessed from the DOI links in the table below. Artroot files contain the full information available to members of the collaboration, while HDF5 files have a reduced and simplified content. Each HDF5 sample is provided in two versions: with and without wire information. The reason is that, when present, the wire information largely dominated the file size. A second set of datasets is therefore created without the wire information, thus allowing storage of a significantly larger number of *events* for applications that do not use the wire information (where events are defined as independent detector read outs). 
 
 Sample | DOI | N events | N HDF5 files | HDF5 size | N artroot files | artroot size
 -- | -- | -- | -- | -- | -- | --
-Inclusive, NoWire | TBD | 141,260 | 20 | 34 GB | 3400 | 787 GB
-Inclusive, WithWire | TBD | 24,332 | 18 | 44 GB | 720 | 136 GB
-Electron neutrino, NoWire | TBD | 89,339 | 20 | 31 GB | 2151 | 761 GB
-Electron neutrino, WithWire | TBD | 19,940 | 20 | 39 GB | 540 | 170 GB
+Inclusive, NoWire           | [10.5281/zenodo.7261798](10.5281/zenodo.7261798) | 141,260 | 20 | 34 GB | 3400 | 787 GB
+Inclusive, WithWire         | [10.5281/zenodo.7262009](10.5281/zenodo.7262009) | 24,332  | 18 | 44 GB | 720  | 136 GB
+Electron neutrino, NoWire   | [10.5281/zenodo.7261921](10.5281/zenodo.7261921) | 89,339  | 20 | 31 GB | 2151 | 761 GB
+Electron neutrino, WithWire | [10.5281/zenodo.7262140](10.5281/zenodo.7262140) | 19,940  | 20 | 39 GB | 540  | 170 GB
 
 
 ## HDF5 format
 
 This section provides documentation on how to access the information included in the HDF5 files. Examples demonstrating how to use the data is provided in the form of jupyter notebooks. The full description of the file content is also provided.
 
-Here we point to more information on the HDF5 file format and how to read them. HDF5 is a product of the [HDF5 group](https://docs.hdfgroup.org/archive/support/HDF5/doc/index.html). In the notebookes we open the files using the `File` class from [pynuml](https://libraries.io/pypi/pynuml), which internally relies on [h5py](https://docs.h5py.org/en/stable/index.html). We also use [p5concat](https://github.com/NU-CUCIS/ph5concat) to merge files and to add auxiliary data for faster lookup of related information across different tables.
+The HDF5 format is a product of the [HDF5 group](https://docs.hdfgroup.org/archive/support/HDF5/doc/index.html). In the notebookes we open the files using the `File` class from [pynuml](https://libraries.io/pypi/pynuml), which internally relies on [h5py](https://docs.h5py.org/en/stable/index.html). We also use [p5concat](https://github.com/NU-CUCIS/ph5concat) to merge files and to add auxiliary data for faster lookup of related information across different tables.
 
 ### Jupyter notebooks
 
 #### Local Setup
 
-These set of notebooks can be run from a conda environment (or similar setup) that includes the following packages and their dependents: python=3.7, scipy, jupyter, matplotlib, h5py, plotly, pandas, particle, scikit-image.
-Plus the pynuml package for helper functions used to easily access information in the files.
+This set of notebooks can be run from a conda environment (or similar setup) that includes the following packages and their dependents: python=3.7, scipy, jupyter, matplotlib, h5py, plotly, pandas, particle, scikit-image. In addition, the pynuml package is used for helper functions providing easier access to information in the files.
 
 Recipe:
 ```
@@ -56,17 +55,17 @@ While the previous two networks are based on hits, i.e. discrete measurements, t
 
 The `Optical Information.ipynb` notebook focuses on the usage of optical detector information, as opposed to time projection chamber measuerements which is the focus of the other notebooks. In this notebook we show how to access the data and demostrate some useful metrics for the optical measurements.
 
-The `microboone_utils.py` file contains useful tools to access detector information, or other information relative to our physics data. Instead, `plot_utils.py` collects a few utilities used for producing plots, and are independent from our data.
+The `microboone_utils.py` file contains useful tools to access detector information, or other information relative to our physics data. The `plot_utils.py` file collects a few utilities used for producing plots that are independent from our data.
 
 ### Structure and content of input files
 
 The structure and content of the hdf5 input files can be found at this wiki page: [Structure and content of input files](file-content-hdf5.md), where each element in the file is documented in terms of its name, type, size, and a human readable description.
 
-## artroot format
+## Artroot format
 
-These samples are made available in the “artroot” file format, which is the original format used internally by the experiment. As such it contains the full information typically available to members of the collaboration to develop reconstruction algorithms or downstream analyses. These artroot files are stored on Fermilab disk spaces and have also been given open access, through [xrootd](https://xrootd.slac.stanford.edu/). Usage of these files is recommended only for users that are familiar with the software stack used by Fermilab neutrino experiments, which includes [art](https://art.fnal.gov/), [LArSoft](https://larsoft.github.io/), [root](https://root.cern.ch/), and uboonecode. 
+Samples are also made available in the “artroot” file format, which is the original format used internally by the experiment. As such it contains the full information typically available to members of the collaboration to develop reconstruction algorithms or downstream analyses. These artroot files are stored on Fermilab disk space and have been given open access through [xrootd](https://xrootd.slac.stanford.edu/). Usage of these files is recommended only for users that are familiar with the software stack used by Fermilab neutrino experiments, which includes [art](https://art.fnal.gov/), [LArSoft](https://larsoft.github.io/), [root](https://root.cern.ch/), and uboonecode. The LArSoft website, in particular, provides useful examples and extensive documentation.
 
-The content of the open artroot files has been documented in [this document](file-content-artroot.md), where the data product classes are documented in the [LArSoft doxygen pages](https://nusoft.fnal.gov/larsoft/doxsvn/html/).
+The content of the open artroot files has been documented in [this document](file-content-artroot.md). Documentation about the data product classes is provided by the [LArSoft doxygen pages](https://nusoft.fnal.gov/larsoft/doxsvn/html/).
 
 As an example of accessing the artroot files, we point to the [code](https://github.com/uboone/hdf5maker/blob/opensamples/hdf5maker/HDF5Maker/HDF5Maker_module.cc) used to create the HDF5 samples, and the configuration files used to produce the version [with](https://github.com/uboone/hdf5maker/blob/opensamples/hdf5maker/HDF5Maker/hdf5maker_uB_public_job.fcl) and [without](https://github.com/uboone/hdf5maker/blob/opensamples/hdf5maker/HDF5Maker/hdf5maker_uB_public-nowire_job.fcl) wire information. This code is imported and adapted from the [numl](https://github.com/vhewes/numl) repository.
 
