@@ -6,10 +6,10 @@ Samples are provided in two different formats: HDF5, targeting the broadest audi
 
 Sample | DOI | N events | N HDF5 files | HDF5 size | N artroot files | artroot size
 -- | -- | -- | -- | -- | -- | --
-Inclusive, NoWire           | [10.5281/zenodo.7261798](10.5281/zenodo.7261798) | 141,260 | 20 | 34 GB | 3400 | 787 GB
-Inclusive, WithWire         | [10.5281/zenodo.7262009](10.5281/zenodo.7262009) | 24,332  | 18 | 44 GB | 720  | 136 GB
-Electron neutrino, NoWire   | [10.5281/zenodo.7261921](10.5281/zenodo.7261921) | 89,339  | 20 | 31 GB | 2151 | 761 GB
-Electron neutrino, WithWire | [10.5281/zenodo.7262140](10.5281/zenodo.7262140) | 19,940  | 20 | 39 GB | 540  | 170 GB
+Inclusive, NoWire           | [10.5281/zenodo.7261798](https://doi.org/10.5281/zenodo.7261798) | 141,260 | 20 | 34 GB | 3400 | 787 GB
+Inclusive, WithWire         | [10.5281/zenodo.7262009](https://doi.org/10.5281/zenodo.7262009) | 24,332  | 18 | 44 GB | 720  | 136 GB
+Electron neutrino, NoWire   | [10.5281/zenodo.7261921](https://doi.org/10.5281/zenodo.7261921) | 89,339  | 20 | 31 GB | 2151 | 761 GB
+Electron neutrino, WithWire | [10.5281/zenodo.7262140](https://doi.org/10.5281/zenodo.7262140) | 19,940  | 20 | 39 GB | 540  | 170 GB
 
 
 ## HDF5 format
