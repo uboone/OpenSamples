@@ -2,20 +2,19 @@
 
 Two MicroBooNE datasets are opened to the public. They contain simulated neutrino interactions, overlaid on top of cosmic ray data. Both simulate neutrinos in the Booster Neutrino Beam (BNB). The first sample includes all types of neutrinos and interactions (taking place in the whole cryostat volume), with relative abundance matching our nominal flux and cross section models. The second sample is restricted to charged-current electron neutrino interactions within the argon active volume of the time projection chamber. 
 
-Samples are provided in two different formats: HDF5, targeting the broadest audience, and artroot, targeting users that are familiar with the software infrastructure of Fermilab neutrino experiments and more in general of HEP experiments.
+Samples are provided in two different formats: HDF5, targeting the broadest audience, and artroot, targeting users that are familiar with the software infrastructure of Fermilab neutrino experiments and more in general of HEP experiments. Both the HDF5 files and a list of xrootd urls providing access to the artoot files are stored on the open data portal [Zenodo](https://zenodo.org/), and can be accessed from the DOI links in the table below. Each sample is provided in two versions: with and without wire information. The reason is that, when present, the wire information largely dominated the file size. A second set of datasets is therefore created without the wire information, thus allowing storage of a significantly larger number of *events* for applications that do not use the wire information (where events are defined as independent detector read outs). 
+
+Sample | DOI | N events | N HDF5 files | HDF5 size | N artroot files | artroot size
+-- | -- | -- | -- | -- | -- | --
+Inclusive, NoWire | TBD | 141,260 | 20 | 34 GB | 3400 | 787 GB
+Inclusive, WithWire | TBD | 24,332 | 18 | 44 GB | 720 | TBD
+Electron neutrino, NoWire | TBD | 89,339 | 20 | 31 GB | 2151 | 761 GB
+Electron neutrino, WithWire | TBD | 19,940 | 20 | 40 GB | 540 | TBD
+
 
 ## HDF5 format
 
-HDF5 files for the two open samples of simulated BNB neutrino interactions (inclusive and charged-current electron neutrino) are stored on the open data portal [Zenodo](https://zenodo.org/). Each sample is provided in two versions: with and without wire information. The reason is that, when present, the wire information largely dominated the file size. A second set of datasets is therefore created without the wire information, thus allowing storage of a significantly larger number of *events* for applications that do not use the wire information (where events are defined as independent detector read outs). 
-
-Sample | DOI | N events | N files | size
--- | -- | -- | -- | --
-Inclusive, NoWire | TBD | 141,260 | 20 | 34 GB
-Inclusive, WithWire | TBD | 24,332 | 18 | 44 GB
-Electron neutrino, NoWire | TBD | 89,339 | 20 | 31 GB
-Electron neutrino, WithWire | TBD | 19,940 | 20 | 40 GB
-
-This section provides documentation on how to access the information included in the HDF5 files. Examples demonstrating how to use the data is provided in the form of jupyter notebooks. The ful description of the file content is also provided.
+This section provides documentation on how to access the information included in the HDF5 files. Examples demonstrating how to use the data is provided in the form of jupyter notebooks. The full description of the file content is also provided.
 
 Here we point to more information on the HDF5 file format and how to read them. HDF5 is a product of the [HDF5 group](https://docs.hdfgroup.org/archive/support/HDF5/doc/index.html). In the notebookes we open the files using the `File` class from [pynuml](https://libraries.io/pypi/pynuml), which internally relies on [h5py](https://docs.h5py.org/en/stable/index.html). We also use [p5concat](https://github.com/NU-CUCIS/ph5concat) to merge files and to add auxiliary data for faster lookup of related information across different tables.
 
@@ -65,16 +64,7 @@ The structure and content of the hdf5 input files can be found at this wiki page
 
 ## artroot format
 
-These samples are extracted from “artroot” files typically used by the experiment. The corresponding artroot files are stored on Fermilab disk spaces and have also been given open access, through [xrootd](https://xrootd.slac.stanford.edu/). Usage of these files is recommended only for users that are familiar with the software stack used by Fermilab neutrino experiments, which includes [art](https://art.fnal.gov/), [LArSoft](https://larsoft.github.io/), [root](https://root.cern.ch/), and uboonecode. 
-
-Lists of xrootd urls providing access to the two samples can be found at these links: [inclusive neutrino interactions](public-artroot-bnb.list) and [charged-current electron neutrino interaction](public-artroot-nue.list).
-
-Sample | N events | N files | size
--- | -- | -- | --
-Inclusive | 141,260 | 3400 | 787 GB
-Electron neutrino | 89,339 | 2151 | 761 GB
-
-We also provide the lists of xrootd urls corresponding to the files used for producing the "WithWire" HDF5 datasets: [inclusive neutrino interactions](public-artroot-bnb-withwire.list) and [charged-current electron neutrino interaction](public-artroot-nue-withwire.list). These are a subset of the full file lists reported above, which are used to produce the "NoWire" HDF5 samples.
+These samples are made available in the “artroot” file format, which is the original format used internally by the experiment. As such it contains the full information typically available to members of the collaboration to develop reconstruction algorithms or downstream analyses. These artroot files are stored on Fermilab disk spaces and have also been given open access, through [xrootd](https://xrootd.slac.stanford.edu/). Usage of these files is recommended only for users that are familiar with the software stack used by Fermilab neutrino experiments, which includes [art](https://art.fnal.gov/), [LArSoft](https://larsoft.github.io/), [root](https://root.cern.ch/), and uboonecode. 
 
 The content of the open artroot files has been documented in [this document](file-content-artroot.md), where the data product classes are documented in the [LArSoft doxygen pages](https://nusoft.fnal.gov/larsoft/doxsvn/html/).
 
