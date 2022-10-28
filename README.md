@@ -2,14 +2,14 @@
 
 Two MicroBooNE datasets are opened to the public. They contain simulated neutrino interactions, overlaid on top of cosmic ray data. Both simulate neutrinos in the Booster Neutrino Beam (BNB). The first sample includes all types of neutrinos and interactions (taking place in the whole cryostat volume), with relative abundance matching our nominal flux and cross section models. The second sample is restricted to charged-current electron neutrino interactions within the argon active volume of the time projection chamber. 
 
-Samples are provided in two different formats: HDF5, targeting the broadest audience, and artroot, targeting users that are familiar with the software infrastructure of Fermilab neutrino experiments and more in general of HEP experiments. Both the HDF5 files and a list of xrootd urls providing access to the artoot files are stored on the open data portal [Zenodo](https://zenodo.org/), and can be accessed from the DOI links in the table below. Each sample is provided in two versions: with and without wire information. The reason is that, when present, the wire information largely dominated the file size. A second set of datasets is therefore created without the wire information, thus allowing storage of a significantly larger number of *events* for applications that do not use the wire information (where events are defined as independent detector read outs). 
+Samples are provided in two different formats: HDF5, targeting the broadest audience, and artroot, targeting users that are familiar with the software infrastructure of Fermilab neutrino experiments and more in general of HEP experiments. Both the HDF5 files and a list of xrootd urls providing access to the artoot files are stored on the open data portal [Zenodo](https://zenodo.org/), and can be accessed from the DOI links in the table below. Artroot files contain the full information available to members of the collaboration, while HDF5 files have a reduced and simplified content. Each HDF5 sample is provided in two versions: with and without wire information. The reason is that, when present, the wire information largely dominated the file size. A second set of datasets is therefore created without the wire information, thus allowing storage of a significantly larger number of *events* for applications that do not use the wire information (where events are defined as independent detector read outs). 
 
 Sample | DOI | N events | N HDF5 files | HDF5 size | N artroot files | artroot size
 -- | -- | -- | -- | -- | -- | --
 Inclusive, NoWire | TBD | 141,260 | 20 | 34 GB | 3400 | 787 GB
-Inclusive, WithWire | TBD | 24,332 | 18 | 44 GB | 720 | TBD
+Inclusive, WithWire | TBD | 24,332 | 18 | 44 GB | 720 | 136 GB
 Electron neutrino, NoWire | TBD | 89,339 | 20 | 31 GB | 2151 | 761 GB
-Electron neutrino, WithWire | TBD | 19,940 | 20 | 40 GB | 540 | TBD
+Electron neutrino, WithWire | TBD | 19,940 | 20 | 39 GB | 540 | 170 GB
 
 
 ## HDF5 format
