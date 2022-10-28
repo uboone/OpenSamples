@@ -8,12 +8,12 @@ Samples are provided in two different formats: HDF5, targeting the broadest audi
 
 HDF5 files for the two open samples of simulated BNB neutrino interactions (inclusive and charged-current electron neutrino) are stored on the open data portal [Zenodo](https://zenodo.org/). Each sample is provided in two versions: with and without wire information. The reason is that, when present, the wire information largely dominated the file size. A second set of datasets is therefore created without the wire information, thus allowing storage of a significantly larger number of *events* for applications that do not use the wire information (where events are defined as independent detector read outs). 
 
-Sample | N events | N files | size
+Sample | DOI | N events | N files | size
 -- | -- | -- | --
-Inclusive, NoWire | 141,260 | 20 | 34 GB
-Inclusive, WithWire | 24,332 | 18 | 44 GB
-Electron neutrino, NoWire | 89,339 | 20 | 31 GB
-Electron neutrino, WithWire | 19,940 | 20 | 40 GB
+Inclusive, NoWire | TBD | 141,260 | 20 | 34 GB
+Inclusive, WithWire | TBD | 24,332 | 18 | 44 GB
+Electron neutrino, NoWire | TBD | 89,339 | 20 | 31 GB
+Electron neutrino, WithWire | TBD | 19,940 | 20 | 40 GB
 
 This section provides documentation on how to access the information included in the HDF5 files. Examples demonstrating how to use the data is provided in the form of jupyter notebooks. The ful description of the file content is also provided.
 
