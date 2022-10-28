@@ -53,7 +53,7 @@ The notebook `Hit Labeling.ipynb` is meant to illustrate different ways of class
 
 The notebook `Pandora metrics.ipynb` demonstrates a set of performance metrics that are typically used within the collaboration to assess the performance of reconstruction algorithms. This is meant to provide examples of definitions of performance metrics and a reference result from state of the art algorithms that developers can use to measure and compare the performance of their own algorithms.
 
-While the previous two networks are based on hits, i.e. discrete measurements, the `WireImage.ipynb` is meant to show how to extract an image-representation of the data, which can be used for image processing techniques or convolutional neural network developments. This notebooke requires using datasets containing additional information, and labeled as "With Wire".
+While the previous two networks are based on hits, i.e. discrete measurements, the `WireImage.ipynb` is meant to show how to extract an image-representation of the data, which can be used for image processing techniques or convolutional neural network developments. This notebooke requires using datasets containing additional information, and labeled as "WithWire".
 
 The `Optical Information.ipynb` notebook focuses on the usage of optical detector information, as opposed to time projection chamber measuerements which is the focus of the other notebooks. In this notebook we show how to access the data and demostrate some useful metrics for the optical measurements.
 
