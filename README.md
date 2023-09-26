@@ -4,13 +4,66 @@ Two MicroBooNE datasets are opened to the public. They contain simulated neutrin
 
 Samples are provided in two different formats: HDF5, targeting the broadest audience, and artroot, targeting users that are familiar with the software infrastructure of Fermilab neutrino experiments and more in general of HEP experiments. The HDF5 files and a file with the list of xrootd urls providing access to the artoot files are stored on the open data portal [Zenodo](https://zenodo.org/), and can be accessed from the DOI links in the table below. Artroot files contain the full information available to members of the collaboration, while HDF5 files have a reduced and simplified content. Each HDF5 sample is provided in two versions: with and without wire information. The reason is that, when present, the wire information largely dominated the file size. A second set of datasets is therefore created without the wire information, thus allowing storage of a significantly larger number of *events* for applications that do not use the wire information (where events are defined as independent detector read outs). 
 
-Sample | DOI | N events | N HDF5 files | HDF5 size | N artroot files | artroot size
--- | -- | -- | -- | -- | -- | --
-Inclusive, NoWire           | [10.5281/zenodo.7261798](https://doi.org/10.5281/zenodo.7261798) | 141,260 | 20 | 34 GB | 3400 | 787 GB
-Inclusive, WithWire         | [10.5281/zenodo.7262009](https://doi.org/10.5281/zenodo.7262009) | 24,332  | 18 | 44 GB | 720  | 136 GB
-Electron neutrino, NoWire   | [10.5281/zenodo.7261921](https://doi.org/10.5281/zenodo.7261921) | 89,339  | 20 | 31 GB | 2151 | 761 GB
-Electron neutrino, WithWire | [10.5281/zenodo.7262140](https://doi.org/10.5281/zenodo.7262140) | 19,940  | 20 | 39 GB | 540  | 170 GB
-
+<table>
+    <thead>
+        <tr>
+            <th rowspan=2>Sample</th>
+            <th rowspan=2>DOI</th>
+            <th colspan=3>HDF5</th>
+            <th colspan=3>artroot</th>
+        </tr>
+        <tr>
+            <th>N events</th>
+            <th>N files</th>
+            <th>size</th>
+            <th>N events</th>
+            <th>N files</th>
+            <th>size</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Inclusive, NoWire</td>
+            <td><a href="https://doi.org/10.5281/zenodo.8370883">10.5281/zenodo.8370883</a></td>
+            <td>753,467</td>
+            <td>18</td>
+            <td>195 GB</td>
+            <td>1,046,139</td>
+            <td>24436</td>
+            <td>6.4 TB</td>
+        </tr>
+        <tr>
+            <td>Inclusive, WithWire</td>
+            <td><a href="https://doi.org/10.5281/zenodo.7262009">10.5281/zenodo.7262009</a></td>
+            <td>24,332</td>
+            <td>18</td>
+            <td>44 GB</td>
+            <td>24,332</td>
+            <td>720</td>
+            <td>136 GB</td>
+        </tr>
+        <tr>
+            <td>Electron neutrino, NoWire</td>
+            <td><a href="https://doi.org/10.5281/zenodo.7261921">10.5281/zenodo.7261921</a></td>
+            <td>89,339</td>
+            <td>20</td>
+            <td>31 GB</td>
+            <td>89,339</td>
+            <td>2151</td>
+            <td>761 GB</td>
+        </tr>
+        <tr>
+            <td>Electron neutrino, WithWire</td>
+            <td><a href="https://doi.org/10.5281/zenodo.7262140">10.5281/zenodo.7262140</a></td>
+            <td>19,940</td>
+            <td>20</td>
+            <td>39 GB</td>
+            <td>19,940</td>
+            <td>540</td>
+            <td>170 GB</td>
+        </tr>
+    </tbody>
+</table>
 
 ## HDF5 format
 
@@ -26,7 +79,7 @@ This set of notebooks can be run from a conda environment (or similar setup) tha
 
 Recipe:
 ```
-git clone -b v00 https://github.com/uboone/OpenSamples.git
+git clone https://github.com/uboone/OpenSamples.git
 cd OpenSamples/
 conda create -n ubopendata python=3.7
 conda activate ubopendata
